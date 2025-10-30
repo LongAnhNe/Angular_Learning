@@ -1,0 +1,30 @@
+<div class="container">
+    <h2>Danh sách người dùng</h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Tên</th>
+                <th>Email</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{ user.id }}</td>
+                <td>{{ user.name }}</td>
+                <td>{{ user.email }}</td>
+                <td>
+                    <button class="btn btn-sm btn-primary" (click)="selectUser(user)">
+                        Chọn
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div *ngIf="selectedUser" class="alert alert-info">
+        Đã chọn: {{ selectedUser.name }}
+    </div>
+</div>
